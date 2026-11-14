@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>K² Techtron – We Create a Core Business For Your Life</title>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&family=Unbounded:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#eef2ff;--fg:#0c1233;--mut:#454e80;--ln:rgba(20,30,110,.2);--ink:#2638e8;--led:#d98200;--pan:rgba(238,242,255,.84);--bt:#2638e8;--bf:#fff;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0a0f2e;--fg:#eaeeff;--mut:#a5afdf;--ln:rgba(150,165,255,.24);--ink:#7d8cff;--led:#ffb627;--pan:rgba(10,15,46,.82);--bt:#ffb627;--bf:#0a0f2e}}
+:root[data-theme="dark"]{--bg:#0a0f2e;--fg:#eaeeff;--mut:#a5afdf;--ln:rgba(150,165,255,.24);--ink:#7d8cff;--led:#ffb627;--pan:rgba(10,15,46,.82);--bt:#ffb627;--bf:#0a0f2e}
+*{box-sizing:inherit;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 72px)}
+body{background:var(--bg);color:var(--fg);font:17px/1.6 'Hanken Grotesk',system-ui,sans-serif}
+h1,h2,h3,.logo{font-family:Unbounded,'Trebuchet MS',system-ui,sans-serif}
+a{color:inherit}
+:is(a,li):focus-visible{outline:2px solid var(--led);outline-offset:3px}
+#gl{position:fixed;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none}
+header,body::before{background:var(--pan);backdrop-filter:blur(12px)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:31}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px max(20px,5vw);border-bottom:1px solid var(--ln)}
+.logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:18px;text-decoration:none}
+nav{display:flex;align-items:center;gap:22px}
+nav a:not(.btn){text-decoration:none;color:var(--mut);font-weight:500}
+nav a:not(.btn):hover{color:var(--fg)}
+.btn{display:inline-flex;align-items:center;padding:13px 22px;border-radius:6px;background:var(--bt);color:var(--bf);font-weight:600;text-decoration:none;border:1.5px solid var(--bt);transition:transform .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn.g{background:transparent;color:var(--fg);border-color:var(--fg)}
+section{max-width:1160px;margin:0 auto;padding:88px max(20px,5vw)}
+section.hero{min-height:calc(100svh - 64px);display:flex;align-items:center}
+.hero div{max-width:600px}
+h1{font-size:clamp(2rem,5vw,3.7rem);line-height:1.06;letter-spacing:-.025em;font-weight:700}
+.lead{max-width:52ch;color:var(--mut);font-size:1.12rem;margin:24px 0 32px}
+.row{display:flex;gap:12px;flex-wrap:wrap}
+h2{font-size:clamp(1.5rem,3.4vw,2.4rem);line-height:1.15;letter-spacing:-.02em;font-weight:600;max-width:20ch;margin-bottom:14px}
+.sub{max-width:52ch;color:var(--mut);margin-bottom:40px}
+.svc{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:40px}
+.svc ul{list-style:none;padding:0}
+.svc li{display:grid;grid-template-columns:14px 1fr;gap:16px;padding:18px 20px;margin-bottom:10px;border:1px solid var(--ln);border-radius:6px;background:var(--pan);cursor:pointer;transition:transform .25s,border-color .25s}
+.svc li::before{content:"";width:10px;height:10px;margin-top:9px;border-radius:50%;border:2px solid var(--ln);transition:.25s}
+.svc li.on{transform:translateX(14px);border-color:var(--led)}
+.svc li.on::before{background:var(--led);border-color:var(--led);box-shadow:0 0 12px var(--led)}
+.svc h3{font-size:1.08rem;font-weight:500;margin-bottom:2px}
+.svc p{color:var(--mut);font-size:.98rem}
+.split{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--ln);background:var(--pan);border-radius:6px}
+.split>div{padding:32px}
+.split>div+div{border-left:1px solid var(--ln)}
+.split h3{font-size:1.15rem;font-weight:500;margin-bottom:16px}
+.split ul{padding:0}
+.split li{list-style:none;padding:7px 0 7px 22px;position:relative;color:var(--mut)}
+.split li::before{content:"";position:absolute;left:0;top:17px;width:8px;height:8px;background:var(--led)}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;list-style:none;padding:0;counter-reset:s;margin-top:36px}
+.steps li{border-top:2px solid var(--fg);padding-top:14px;counter-increment:s}
+.steps li::before{content:counter(s);display:block;font:600 15px Unbounded,system-ui;color:var(--ink);margin-bottom:8px}
+.steps h3{font-size:1.05rem;font-weight:500;margin-bottom:6px}
+.steps p{color:var(--mut);font-size:.96rem}
+.cta h2{max-width:16ch;font-size:clamp(1.8rem,5vw,3.4rem)}
+footer{padding:28px max(20px,5vw);border-top:1px solid var(--ln);color:var(--mut);font-size:.92rem;background:var(--pan)}
+.pj{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;perspective:900px}.pj article{padding:22px;border:1px solid var(--ln);border-radius:6px;background:var(--pan);transition:transform .15s}.pj article::before{content:"";display:block;width:40px;height:6px;background:var(--led);margin-bottom:16px}.pj b{font-weight:600;color:var(--ink);font-size:.9rem}.pj h3{font-size:1.05rem;font-weight:500;margin:4px 0 12px}.pj p{color:var(--mut);font-size:.95rem}
+.cg{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:start}.ci{list-style:none;padding:0}.ci li{display:grid;gap:2px;padding:16px 0;border-top:1px solid var(--ln)}.ci b{font-weight:600;color:var(--mut);font-size:.9rem}.ci a,.ci span{font-size:1.1rem;text-decoration:none}
+form{display:grid;gap:14px;padding:24px;border:1px solid var(--ln);border-radius:6px;background:var(--pan)}label{display:grid;gap:6px;font-weight:500;font-size:.95rem}input,select,textarea{font:inherit;padding:11px 12px;border:1px solid var(--ln);border-radius:4px;background:var(--bg);color:var(--fg)}form .btn{justify-self:start;cursor:pointer}
+.own{display:flex;gap:32px;flex-wrap:wrap;margin-bottom:14px}.own b{display:block;font-size:.85rem}
+.pl{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.pl article{padding:24px;border:1px solid var(--ln);border-radius:6px;background:var(--pan)}.pl h3{font-size:1.1rem;font-weight:500}.pl b{display:block;font-size:1.2rem;margin:8px 0 12px;color:var(--ink);font-family:Unbounded,system-ui,sans-serif}.pl p{color:var(--mut)}
+.rw{display:grid;gap:6px;padding:10px;border:1px solid var(--ln);border-radius:6px}
+.note{padding:9px max(20px,5vw);background:var(--bt);color:var(--bf);font-size:.92rem;font-weight:500;text-align:center}
+[hidden]{display:none!important}
+.so{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:14px}.ci .so{margin:8px 0 0}
+.so a{width:42px;height:42px;border-radius:10px;display:grid;place-items:center;background:var(--c);color:#fff;border:1px solid var(--ln);transition:transform .2s}.so a:hover{transform:translateY(-3px)}.so svg{width:22px;height:22px;fill:currentColor}
+.lnk{font:inherit;background:none;border:0;color:var(--mut);text-decoration:underline;cursor:pointer;margin-left:8px}
+dialog{width:min(520px,92vw);max-height:90vh;overflow:auto;padding:0;border:1px solid var(--ln);border-radius:8px;background:var(--bg);color:var(--fg)}dialog::backdrop{background:rgba(5,8,25,.65)}dialog form{border:0;background:none}#am{color:var(--mut);font-size:.95rem}
+@media(max-width:860px){nav a:not(.btn){display:none}.svc,.split{grid-template-columns:1fr}.split>div+div{border-left:0;border-top:1px solid var(--ln)}.steps{grid-template-columns:1fr 1fr}section.hero{align-items:flex-end;min-height:calc(100svh - 76px);padding-bottom:32px}h1{font-size:1.6rem}.lead{font-size:1rem;line-height:1.5;margin:16px 0 20px}.btn{padding:11px 14px;font-size:.92rem}.cg{grid-template-columns:1fr}.pj{grid-template-columns:1fr 1fr}.pl{grid-template-columns:1fr}.svc li.on{transform:translateX(8px)}}
+@media(max-width:520px){.steps,.pj{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+</style>
+<script id="site-data" type="application/json">{"note": "", "phone": "+91 00000 00000", "whatsapp": "+91 00000 00000", "email": "hello@k2techtron.example", "address": "Street, City, State", "social": {"x": "https://x.com/", "facebook": "https://www.facebook.com/", "instagram": "https://www.instagram.com/", "linkedin": "https://www.linkedin.com/", "youtube": "https://www.youtube.com/"}, "projects": [{"tag": "Billing software", "title": "Supermarket billing and stock", "client": "Client name"}, {"tag": "Modern e-commerce", "title": "Online store for a fashion brand", "client": "Client name"}, {"tag": "Game development", "title": "Mobile puzzle game", "client": "Client name"}, {"tag": "Websites and hosting", "title": "School website with hosting", "client": "Client name"}, {"tag": "Server building", "title": "Office server and network", "client": "Client name"}, {"tag": "Software development", "title": "Clinic management software", "client": "Client name"}], "plans": [{"name": "Starter", "price": "Price on request", "details": "Business website with hosting, email and basic support."}, {"name": "Business", "price": "Price on request", "details": "Billing software or an online store, with training and support."}, {"name": "Enterprise", "price": "Price on request", "details": "Custom software, servers and a dedicated support plan."}]}</script>
+</head>
+<body>
+<canvas id="gl" aria-hidden="true"></canvas>
+<div class="note" id="nt" hidden></div>
+<header>
+<a class="logo" href="#top"><svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="4" rx="1" fill="currentColor"/><rect x="6" y="10" width="18" height="4" rx="1" fill="var(--led)"/><rect x="3" y="17" width="18" height="4" rx="1" fill="currentColor"/></svg>K² Techtron</a>
+<nav><a href="#services">Services</a><a href="#work">Our work</a><a href="#plans">Plans</a><a href="#who">Who we help</a><a href="#process">Process</a><a class="btn" href="#contact">Start a project</a></nav>
+</header>
+<main>
+<section class="hero" id="top"><div>
+<h1>We Create a Core Business For Your Life</h1>
+<p class="lead">We build apps, games, billing systems, online stores and websites, then host them and set up the servers they run on. For tech companies, and for businesses that have never had a tech team.</p>
+<div class="row"><a class="btn" href="#contact">Start a project</a><a class="btn g" href="#work">See our work</a></div>
+</div></section>
+
+<section id="services">
+<h2>Seven ways we put technology to work</h2>
+<p class="sub">Point at or tap a service to pull its layer out of the stack.</p>
+<div class="svc"><ul>
+<li tabindex="0"><div><h3>Software development</h3><p>Custom web, desktop and mobile software built around how your team works.</p></div></li>
+<li tabindex="0"><div><h3>Game development</h3><p>2D and 3D games for mobile, web and PC, from first prototype to launch.</p></div></li>
+<li tabindex="0"><div><h3>Billing software</h3><p>Invoicing, tax, stock and reports for shops, clinics and enterprises.</p></div></li>
+<li tabindex="0"><div><h3>Modern e-commerce</h3><p>Fast online stores with secure payments, catalogues and order tracking.</p></div></li>
+<li tabindex="0"><div><h3>Websites and hosting</h3><p>We design, build and host your site, with SSL, backups and monitoring.</p></div></li>
+<li tabindex="0"><div><h3>Server building</h3><p>Servers specified, built, networked and secured, on site or in the cloud.</p></div></li>
+<li tabindex="0"><div><h3>Everything related</h3><p>Maintenance, domains, email, migration, IT support and consulting.</p></div></li>
+</ul></div>
+</section>
+
+<section id="work">
+<h2>Projects we build for our clients</h2>
+<p class="sub">Billing counters, online stores, games and servers, delivered for businesses like yours.</p>
+<div class="pj" id="pj"></div>
+</section>
+
+<section id="plans">
+<h2>Plans</h2>
+<p class="sub">Pick a starting point. We tailor every plan to your business.</p>
+<div class="pl" id="pl"></div>
+</section>
+
+<section id="who">
+<h2>Built for tech teams and for everyone else</h2>
+<p class="sub">Whether you ship software or sell shoes, you get the same engineers and the same standards.</p>
+<div class="split">
+<div><h3>If you build technology</h3><ul><li>Extra engineers for your product or platform</li><li>Game and real-time 3D development</li><li>Servers, deployment and cloud migration</li><li>Billing and e-commerce modules to plug in</li></ul></div>
+<div><h3>If technology is not your business</h3><ul><li>Billing and stock control for your shop, clinic or school</li><li>An online store that takes orders around the clock</li><li>A website with hosting and email handled for you</li><li>Setup, training and support in plain language</li></ul></div>
+</div>
+</section>
+
+<section id="process">
+<h2>How a project runs</h2>
+<ol class="steps">
+<li><h3>Plan</h3><p>We listen, list what you need and agree scope and price.</p></li>
+<li><h3>Design</h3><p>You see screens or a prototype before we build.</p></li>
+<li><h3>Build</h3><p>Short cycles, with a working version to review each time.</p></li>
+<li><h3>Launch and run</h3><p>We deploy, host, monitor and fix.</p></li>
+</ol>
+</section>
+
+<section class="cta" id="contact">
+<h2>Tell us what you need built.</h2>
+<p class="sub">Give us your project with the brief below, or reach us directly.</p>
+<div class="cg">
+<ul class="ci">
+<li><b>Phone</b><a data-k="phone" href="tel:+910000000000">+91 00000 00000</a></li>
+<li><b>WhatsApp</b><a data-k="whatsapp" href="https://wa.me/910000000000">+91 00000 00000</a></li>
+<li><b>Email</b><a data-k="email" href="mailto:hello@k2techtron.example">hello@k2techtron.example</a></li>
+<li><b>Office</b><span data-k="address">Street, City, State</span></li>
+<li><b>Follow us</b><div class="so"></div></li>
+</ul>
+<form id="pf">
+<label>Your name<input name="n" required></label>
+<label>Phone<input name="p" type="tel" required></label>
+<label>Project type<select name="t"><option>Software development</option><option>Game development</option><option>Billing software</option><option>Modern e-commerce</option><option>Website and hosting</option><option>Server building</option><option>Something else</option></select></label>
+<label>Project details<textarea name="d" rows="4" required></textarea></label>
+<button class="btn" type="submit">Send project brief</button>
+</form>
+</div>
+
+</section>
+</main>
+<footer><div class="own"><p><b>Owned by</b>Sri Amirthaa Groups 1252</p><p><b>Chairman</b>S2h1252</p></div><div class="so"></div><p>© 2026 K² Techtron. All rights reserved. <a class="lnk" href="/admin/">Admin</a></p></footer>
+
+
+<script>
+let T=document.getElementById('site-data').textContent;try{const x=new XMLHttpRequest();x.open('GET','content/site.json',false);x.send();if(x.status==200)T=x.responseText}catch(e){}
+const D=JSON.parse(T),$$=q=>[...document.querySelectorAll(q)],dg=v=>v.replace(/\D/g,''),el=id=>document.getElementById(id),
+IC={x:['M18.9 1.2h3.7l-8 9.2L24 22.8h-7.4l-5.8-7.6-6.6 7.6H.5l8.6-9.8L0 1.2h7.6l5.2 6.9zm-1.3 19.4h2L6.5 3.2H4.3z','#000'],
+facebook:['M14 8.5V6.7c0-.8.2-1.2 1.4-1.2H17V2.2C16.7 2.1 15.8 2 14.7 2c-2.4 0-4 1.5-4 4.1v2.4H8v3.6h2.7V22H14v-9.9h2.6l.4-3.6z','#1877F2'],
+instagram:['M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7zm5 3a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6zm5.5-3.2a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4z','#E4405F'],
+linkedin:['M5 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.5h4V21H3zm6.5 0h3.8v1.6h.1c.5-1 1.8-1.9 3.7-1.9 4 0 4.7 2.6 4.7 6V21h-4v-5.2c0-1.3 0-2.9-1.8-2.9s-2 1.4-2 2.8V21h-4z','#0A66C2'],
+youtube:['M23 7.2a3 3 0 0 0-2.1-2.1C19 4.6 12 4.6 12 4.6s-7 0-8.9.5A3 3 0 0 0 1 7.2C.5 9.1.5 12 .5 12s0 2.9.5 4.8a3 3 0 0 0 2.1 2.1c1.9.5 8.9.5 8.9.5s7 0 8.9-.5a3 3 0 0 0 2.1-2.1c.5-1.9.5-4.8.5-4.8s0-2.9-.5-4.8zM9.8 15.5v-7l6 3.5z','#FF0000'],
+whatsapp:['M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z','#25D366']};
+function paint(){
+ $$('[data-k]').forEach(e=>{const k=e.dataset.k,v=D[k];e.textContent=v;if(e.tagName=='A')e.href=k=='phone'?'tel:'+v.replace(/[^\d+]/g,''):k=='whatsapp'?'https://wa.me/'+dg(v):'mailto:'+v});
+ el('nt').textContent=D.note;el('nt').hidden=!D.note;
+ const L=[...Object.entries(D.social),['whatsapp',D.whatsapp?'https://wa.me/'+dg(D.whatsapp):'']].filter(e=>/^https?:\/\//i.test(e[1]));
+ $$('.so').forEach(c=>{c.textContent='';L.forEach(([k,u])=>{const a=document.createElement('a');a.href=u;a.target='_blank';a.rel='noopener';a.setAttribute('aria-label',k);a.style.setProperty('--c',IC[k][1]);a.innerHTML='<svg viewBox="0 0 24 24"><path d="'+IC[k][0]+'"/></svg>';c.append(a)})})}
+function lists(){const mk=(box,rows)=>{box.textContent='';rows.forEach(r=>{const a=document.createElement('article');r.forEach(([t,v])=>{const e=document.createElement(t);e.textContent=v;a.append(e)});box.append(a)})};
+ mk(el('pj'),D.projects.map(p=>[['b',p.tag],['h3',p.title],['p',p.client]]));mk(el('pl'),D.plans.map(p=>[['h3',p.name],['b',p.price],['p',p.details]]));el('plans').hidden=!D.plans.length}
+paint();lists();
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+const cv=document.getElementById('gl'),rows=[...document.querySelectorAll('.svc li')],who=document.getElementById('work');
+let act=0;
+const set=i=>{act=i;rows.forEach((r,j)=>r.classList.toggle('on',j===i))};
+rows.forEach((r,i)=>['pointerenter','focus','click'].forEach(e=>r.addEventListener(e,()=>set(i))));set(0);
+const fade=()=>{cv.style.opacity=Math.min(1,Math.max(.15,who.getBoundingClientRect().top/innerHeight*1.5))};
+addEventListener('scroll',fade,{passive:true});fade();
+if(!matchMedia('(prefers-reduced-motion:reduce)').matches)document.querySelectorAll('.pj article').forEach(c=>{c.onpointermove=e=>{if(e.pointerType=='touch')return;const r=c.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;c.style.transform=`perspective(800px) rotateX(${-y*9}deg) rotateY(${x*11}deg)`};c.onpointerleave=()=>{c.style.transform=''}});
+document.getElementById('pf').onsubmit=e=>{e.preventDefault();const f=e.target;location.href='mailto:'+D.email+'?subject='+encodeURIComponent('Project: '+f.t.value)+'&body='+encodeURIComponent('Name: '+f.n.value+'\nPhone: '+f.p.value+'\n\n'+f.d.value)};
+try{
+const R=new THREE.WebGLRenderer({canvas:cv,alpha:true,antialias:true}),S=new THREE.Scene(),C=new THREE.PerspectiveCamera(45,1,.1,100),G=new THREE.Group(),
+rm=matchMedia('(prefers-reduced-motion:reduce)').matches,
+col=n=>new THREE.Color(getComputedStyle(document.documentElement).getPropertyValue(n).trim());
+let ink=col('--ink'),led=col('--led');
+R.setPixelRatio(Math.min(devicePixelRatio,2));C.position.set(0,2.4,10);C.lookAt(0,0,0);S.add(G);
+const bg=new THREE.BoxGeometry(3.4,.3,2.4),eg=new THREE.EdgesGeometry(bg),lg=new THREE.BoxGeometry(.16,.1,.05),K=[];
+for(let i=0;i<7;i++){
+ const fm=new THREE.MeshBasicMaterial({transparent:true,opacity:.14}),lm=new THREE.LineBasicMaterial(),dm=new THREE.MeshBasicMaterial(),
+ s=new THREE.Group(),d=new THREE.Mesh(lg,dm);
+ d.position.set(-1.4,0,1.21);
+ s.add(new THREE.Mesh(bg,fm),new THREE.LineSegments(eg,lm),d);
+ s.position.y=(3-i)*.62;G.add(s);K.push({s,fm,lm,dm,k:0});
+}
+const N=500,pa=new Float32Array(N*3);
+for(let i=0;i<N*3;i++)pa[i]=(Math.random()-.5)*(i%3==1?12:26);
+const pg=new THREE.BufferGeometry();pg.setAttribute('position',new THREE.BufferAttribute(pa,3));
+const pm=new THREE.PointsMaterial({size:.045,transparent:true,opacity:.7}),P=new THREE.Points(pg,pm);S.add(P);
+const base={x:0,y:0,s:1},
+fit=()=>{const w=innerWidth,h=innerHeight,d=w>860;R.setSize(w,h,false);C.aspect=w/h;C.updateProjectionMatrix();base.s=d?1:.52;base.x=d?2.9:0;
+ const hb=document.querySelector('header').offsetHeight+parseFloat(getComputedStyle(document.documentElement).paddingTop)+96,v=new THREE.Vector3();let y=0;C.updateMatrixWorld();
+ for(let i=0;i<5;i++){v.set(0,y+2.05*base.s,0).project(C);y+=((1-v.y)/2*h-hb)*8.6/h}
+ base.y=d?Math.min(y,0):y};
+let mx=0,my=0,tx=0,ty=0;const ck=new THREE.Clock();
+addEventListener('pointermove',e=>{tx=e.clientX/innerWidth-.5;ty=e.clientY/innerHeight-.5});
+addEventListener('resize',fit);
+matchMedia('(prefers-color-scheme:dark)').addEventListener('change',()=>{ink=col('--ink');led=col('--led')});
+const tick=()=>{
+ const t=rm?0:ck.getElapsedTime();mx+=(tx-mx)*.06;my+=(ty-my)*.06;
+ G.position.set(base.x,base.y,0);G.scale.setScalar(base.s);
+ G.rotation.set(.15+my*.25,-.5+Math.sin(t*.25)*.35+mx*.6,0);
+ K.forEach((o,i)=>{o.k+=((act===i?1:0)-o.k)*(rm?1:.12);o.s.position.x=o.k*1.5;const m=o.k;
+  o.lm.color.copy(ink).lerp(led,m);o.fm.color.copy(ink).lerp(led,m);o.fm.opacity=.12+.16*m;o.dm.color.copy(ink).lerp(led,.3+.7*m)});
+ pm.color.copy(ink);P.rotation.y=t*.01;R.render(S,C)};
+const loop=()=>{tick();if(!rm)requestAnimationFrame(loop)};
+fit();loop();
+if(rm)['scroll','resize','click','pointerenter'].forEach(ev=>addEventListener(ev,tick,true));
+}catch(e){}
+</script>
+</body>
+</html>
