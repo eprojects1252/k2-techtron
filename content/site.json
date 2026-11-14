@@ -1,0 +1,21 @@
+{
+"note": "",
+"phone": "+91 00000 00000",
+"whatsapp": "+91 00000 00000",
+"email": "hello@k2techtron.example",
+"address": "Street, City, State",
+"social": {"x": "https://x.com/", "facebook": "https://www.facebook.com/", "instagram": "https://www.instagram.com/", "linkedin": "https://www.linkedin.com/", "youtube": "https://www.youtube.com/"},
+"projects": [
+{"tag": "Billing software", "title": "Supermarket billing and stock", "client": "Client name"},
+{"tag": "Modern e-commerce", "title": "Online store for a fashion brand", "client": "Client name"},
+{"tag": "Game development", "title": "Mobile puzzle game", "client": "Client name"},
+{"tag": "Websites and hosting", "title": "School website with hosting", "client": "Client name"},
+{"tag": "Server building", "title": "Office server and network", "client": "Client name"},
+{"tag": "Software development", "title": "Clinic management software", "client": "Client name"}
+],
+"plans": [
+{"name": "Starter", "price": "Price on request", "details": "Business website with hosting, email and basic support."},
+{"name": "Business", "price": "Price on request", "details": "Billing software or an online store, with training and support."},
+{"name": "Enterprise", "price": "Price on request", "details": "Custom software, servers and a dedicated support plan."}
+]
+}
