@@ -1,0 +1,42 @@
+backend:
+  name: github
+  repo: eprojects1252/k2-techtron
+  branch: main
+media_folder: images
+collections:
+  - name: site
+    label: Website
+    files:
+      - name: content
+        label: Website content
+        file: content/site.json
+        format: json
+        fields:
+          - {label: Top message, name: note, widget: string, required: false}
+          - {label: Phone, name: phone, widget: string}
+          - {label: WhatsApp number, name: whatsapp, widget: string}
+          - {label: Email, name: email, widget: string}
+          - {label: Office address, name: address, widget: string}
+          - label: Social links
+            name: social
+            widget: object
+            fields:
+              - {label: X (Twitter), name: x, widget: string, required: false}
+              - {label: Facebook, name: facebook, widget: string, required: false}
+              - {label: Instagram, name: instagram, widget: string, required: false}
+              - {label: LinkedIn, name: linkedin, widget: string, required: false}
+              - {label: YouTube, name: youtube, widget: string, required: false}
+          - label: Client projects
+            name: projects
+            widget: list
+            fields:
+              - {label: Category, name: tag, widget: string}
+              - {label: Project title, name: title, widget: string}
+              - {label: Client name, name: client, widget: string}
+          - label: Plans
+            name: plans
+            widget: list
+            fields:
+              - {label: Plan name, name: name, widget: string}
+              - {label: Price, name: price, widget: string}
+              - {label: Details, name: details, widget: text}
